@@ -1,11 +1,11 @@
-re@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 *{
   /*margin: 0;*/
   /*padding: 0;*/
   --panel_background: rgba(24, 13, 52, 0.5);
-  --highlight_background: rrgba(0, 142, 123, 1);
-  --highlight_border: rgbRGB(255,0,57);
+  --highlight_background: rgba(60, 44, 124, 0.5);
+  --highlight_border: rgb(255, 204, 0);
   --text_color: #eae5eb;
   --link_color: #dcd9e5;
 }
@@ -14,7 +14,10 @@ html{
   scroll-behavior: smooth;
 }
 
-
+body{
+  background-image: url("ArcheyBcg");
+  background-size: cover;
+}
 
 body{
   margin: 0;
@@ -283,19 +286,4 @@ table:target{
   color: white;
   font-size: 0.9em;
   font-style: italic;
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
