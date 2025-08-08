@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+re@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 *{
   /*margin: 0;*/
@@ -14,7 +14,7 @@ html{
   scroll-behavior: smooth;
 }
 
-body {
+header{
   background-image: url("ArcheyBcg.jpg");
   background-size: cover; 
 }
@@ -288,6 +288,7 @@ table:target{
   font-style: italic;
 
 }
+
 
 
 
