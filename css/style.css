@@ -14,7 +14,7 @@ html{
   scroll-behavior: smooth;
 }
 
-header{
+.container{
   background-image: url("ArcheyBcg.jpg");
   background-size: cover; 
 }
@@ -288,6 +288,7 @@ table:target{
   font-style: italic;
 
 }
+
 
 
 
