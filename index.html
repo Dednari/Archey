@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="svoe95">
+    <meta name="keywords" content="dnd,fantasy,dark,game,roleplay,tabletop">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Главная страница</title>
+  </head>
+  <body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+    <main>
+      <!-- Внешняя панель для ввода логина -->
+      <div class="panel" hidden>
+        <form id="loginForm" action="index.html" method="post">
+          <input type="text" name="login" placeholder="Логин..." required>
+          <br>
+          <input type="password" name="pswrd" placeholder="Пароль..." required>
+          <br>
+          <input type="submit"> <input type="reset">
+        </form>
+        <br>
+        <form id="registrationForm" action="index.html" method="post">
+          <input type="text" name="userName" placeholder="Отображаемое имя...">
+          <br>
+          <input type="text" name="loginRegistration" placeholder="Логин..." required>
+          <br>
+          <input type="email" name="emailRegistration" placeholder="Электронная почта..." required>
+          <br>
+          <input type="password" name="pswrdReg" placeholder="Пароль..." required>
+          <br>
+          <input type="password" name="pswrdRegConfirm" placeholder="Повторите пароль..." required>
+          <br>
+          <input type="submit"> <input type="reset">
+        </form>
+      </div>
+      <!-- Карточка тектса -->
+      <div class="card" hidden>
+        <h1>Заголовок</h1>
+        <h3><i>Подзаголовок</i></h3>
+        <p class="main_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="container center">
+        <div class="card item center">
+          <h1>Введение</h1>
+          <p class="main_text">Под дополнениями подразумеваются следующие материалы:
+            <b>Eberron: Rising from the Last War, Mordenkainen Presents: Monsters of the Multiverse,
+              Guildmasters' guide to Ravnica, Spelljammer: Adventures in Space, Volo's guide to monsters, Dragonlance: Shadow of the Dragon Queen
+              Princes of the Apocalypse, Grim's Hollow Player Guide.
+            </b>
+          </p>
+          <p class="main_text">Игра проводится на правилах D&D 2024 (5.5 / One), имеет хоумрулы и применяет хоумбрю.
+           <br>Хочется подметить важное отличие:
+            <i>Зелье пьётся <b>бонусным действием.</b></i>
+          </p>
+          <p class="main_text">Также, под основным (официальным) изданием подразумеваются следующие материалы:
+            <b>Sword Coast Adventurer’s Guide, Xanathar’s Guide to Everything, Mordenkainen’s Tome of Foes,
+              Tasha’s Cauldron of Everything.</b>
+          </p>
+          <p class="main_text"> Предыстории, представленные конкретно в данном приключении являются опциональными и призваны дополнять предыстории из других изданий. Можно комбинировать предыстории (но не их бонусы).</p>
+          <p class="main_text"> Используются классы и подклассы из обоих изданий (PH14, PH24),
+            вы в праве выбирать то, что вам нравится по игровому стилю, что может помочь отыгрышу.
+            Одно из важных замечаний: Если вы собираетесь использовать подклассы из дополнений к 5-ой редакции,
+            то класс должен быть использован из этой редакции (но возможны исключения,
+            уточняйте у мастера при создании персонажа).
+            <!-- <br>Список переработанных классов:
+            <ol>
+              <li>Волшебник</li>
+              <li>Чародей</li>
+              <li>Колдун</li>
+              <li>Паладин</li>
+              <li>Бард</li>
+            </ol> -->
+            <br>Разрешённые хоумбрю классы:</p>
+          <ol>
+            <li>Алхимик</li>
+          </ol>
+          <p class="main_text">Разрешены хоумбрю подклассы из Grim's Hollow. Они идеально отражают
+            данный сеттинг и даже предпочтительнее обыкновенных подклассов при
+            создании персонажей с использованием предысторий этого приключения.
+          </p>
+          <p class="main_text">Некоторые расы были переработаны. Используются расы из PHB 5-ой редакции и дополнений.
+            <br>Список разрешённых рас:</p>
+          <ol>
+            <li>Все расы из PHB 2024</li>
+            <li>Все расы из PHB 2014</li>            <!-- <li><a href="#">Эльф (хоумбрю)</a></li> -->
+            <li>Кованный</li>
+            <li>Дженази</li>
+            <li>Сатир</li>
+            <li>Табакси</li>
+            <li>Кенку</li>
+            <li>Гит</li>
+            <li>Ведалкен</li>
+            <li>Вердан</li>
+            <li>Кендер</li>
+            <li>Зайцегон</li>
+            <li>Фейри</li>
+            <li>Тортл</li>
+            <li>Голиаф</li>
+            <li>Кобольд</li>
+            <li>Людоящер</li>
+            <li>Шифтер</li>
+          </ol>
+          <p class="main_text"></p>
+          <p class="main_text"></p>
+          <p class="main_text"></p>
+        </div>
+        <div class="card item center">
+          <h1>Дополнительные правила</h1>
+          <h2>Тиры</h2>
+          <p>Игры в кампаниях данного сеттинга подразделяются на 5 тиров, знаменующих ту или иную ступень сюжетного и силового развития персонажей. Чем выше тир, тем сильнее и интереснее враги, а события и задания принимают всё больший масштаб.</p>
+          <ol>
+            <li>1-4 уровень</li>
+            <li>5-10 уровень</li>
+            <li>11-14 уровень</li>
+            <li>15-20 уровень</li>
+            <li>20+ уровень</li>
+          </ol>
+          <h2>Создание персонажей</h2>
+          <p>В зависимости от тира персонажи могут получить различное снаряжение для комфортного начала игры.</p>
+          <h3>Тир 1</h3>
+          <p>Любой обычный предмет и 1 обычное зелье лечение.</p>
+          <h3>Тир 2</h3>
+          <p>Два любых обычный и один необычный предмет. 2 обычных зелья лечения. <b>+500 золотых</b> на закупку. Предметы имеют свою максимальную стоимость.</p>
+          <h3>Тир 3</h3>
+          <p>Три любых необычных предмета, один редкий, один очень редкий, 2 обычных зелья лечения и 1 большое зелье лечения. <b>+5 000 золотых</b> на закупку. Предметы имеют свою максимальную стоимость. Можно обменять очень редкий предмет на 10 000 золотых, редкий предмет на 1 000 золотых, необычный предмет на 100 золотых.
+            Зелье лечения (необычной редкости) можно заменить на другое любое зелье обычной редкости.</p>
+          <h3>Тир 4</h3>
+          <p>Два очень редких предмета, два редких, два необычных предмета, 3 больших зелья лечения, 2 отличных зелья и 1 превосходное. <b>+100 000 золотых</b> на закупку. Предметы имеют свою максимальную стоимость.</p>
+          <h3>Тир 5</h3>
+          <p>Один артефакт и один легендарный предмет (уникальные, не перекликающийся с другими игроками), два очень редких, три редких предмета и три необычных предмета. 5 обычных зелья лечения, 5 больших зелья лечения, 2 отличных зелья лечения, 3 превосходных зелья лечения. <b>+150 000 золотых</b> на закупку. Предметы имеют свою максимальную стоимость.</p>
+          <h2>Основной тир</h2>
+          <p>В данный момент основные игры проводятся на <b>третьем</b> тире. Второстепенная игра проводится на <b>первом</b> тире в онлайн формате.</p>
+        </div>
+      </div>
+
+
+      <!-- Карточка предмета -->
+      <div class="artifact-card" hidden>
+        <h1>Название</h1>
+        <i>Тип,</i>
+        <i>редкость,</i>
+        <i>настройка,</i>
+        <i>стоимость</i>
+        <p>Свойства</p>
+        <p>Проклятия</p>
+        <img src="" alt="Картинка">
+      </div>
+      <!-- Карточка персонажа -->
+      <div class="character-card" hidden>
+        <h1>Имя персонажа</h1>
+        <h3>Хиты</h3>
+        <h4>Раса</h4>
+        <h4>Класс</h4>
+        <h4>Подкласс</h4>
+        <h3>Уровень</h3>
+        <p><b>текущий опыт / опыт для следующего уровня</b></p>
+        <table>
+          <tr>
+            <th>СИЛ</th>
+            <th>ЛОВ</th>
+            <th>ТЕЛ</th>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <th>ИНТ</th>
+            <th>МДР</th>
+            <th>ХАР</th>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+          </tr>
+        </table>
+        <!-- Таблица навыков -->
+        <!-- <table border="solid">
+          <caption>Навыки</caption>
+          <tr>
+            <th>СИЛ</th>
+          </tr>
+          <tr>
+            <td>Атлетика (+0)</td>
+          </tr>
+          <tr>
+            <th>ЛОВ</th>
+          </tr>
+          <tr>
+            <td>Акробатика (+0)</td>
+          </tr>
+          <tr>
+            <td>Ловкость рук (+0)</td>
+          </tr>
+          <tr>
+            <td>Скрытность (+0)</td>
+          </tr>
+          <tr>
+            <th>ИНТ</th>
+          </tr>
+          <tr>
+            <td>Акробатика (+0)</td>
+          </tr>
+          <tr>
+            <td>Ловкость рук (+0)</td>
+          </tr>
+          <tr>
+            <td>Скрытность (+0)</td>
+          </tr>
+          <tr>
+            <th>МДР</th>
+          </tr>
+          <tr>
+            <td>Акробатика (+0)</td>
+          </tr>
+          <tr>
+            <td>Ловкость рук (+0)</td>
+          </tr>
+          <tr>
+            <td>Скрытность (+0)</td>
+          </tr>
+          <tr>
+            <th>ХАР</th>
+          </tr>
+          <tr>
+            <td>Акробатика (+0)</td>
+          </tr>
+          <tr>
+            <td>Ловкость рук (+0)</td>
+          </tr>
+          <tr>
+            <td>Скрытность (+0)</td>
+          </tr>
+        </table> -->
+      </div>
+    </main>
+    <footer></footer>
+  <script src="js/navigator.js"></script>
+  </body>
+</html>
