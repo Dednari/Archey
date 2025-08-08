@@ -4,8 +4,8 @@
   /*margin: 0;*/
   /*padding: 0;*/
   --panel_background: rgba(24, 13, 52, 0.5);
-  --highlight_background: rgba(60, 44, 124, 0.5);
-  --highlight_border: rgb(255,204,0);
+  --highlight_background: rrgba(0, 142, 123, 1);
+  --highlight_border: rgbRGB(255,0,57);
   --text_color: #eae5eb;
   --link_color: #dcd9e5;
 }
@@ -283,5 +283,6 @@ table:target{
   font-style: italic;
 
 }
+
 
 
