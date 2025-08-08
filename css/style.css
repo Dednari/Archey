@@ -14,6 +14,13 @@ html{
   scroll-behavior: smooth;
 }
 
+bosy{
+  width: 563px;
+  height: 1000px;
+  background-image: url('ArcheyBcg.jpg');
+  background-size: cover; /* размер одного повторяющегося изображения */
+}
+
 body{
   margin: 0;
   padding: 0;
@@ -282,3 +289,4 @@ table:target{
   font-size: 0.9em;
   font-style: italic;
 }
+
