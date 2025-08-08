@@ -4,7 +4,7 @@
   /*margin: 0;*/
   /*padding: 0;*/
   --panel_background: rgba(24, 13, 52, 0.5);
-  --highlight_background: rgba(60, 44, 124, 0.5);
+  --highlight_background: rgba(94, 13, 13, 1);
   --highlight_border: rgb(255, 204, 0);
   --text_color: #eae5eb;
   --link_color: #dcd9e5;
@@ -281,4 +281,5 @@ table:target{
   color: white;
   font-size: 0.9em;
   font-style: italic;
+
 }
