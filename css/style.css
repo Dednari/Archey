@@ -14,7 +14,7 @@ html{
   scroll-behavior: smooth;
 }
 
-.container {
+.stylesheet {
   width: 563px;
   height: 1000px;
   background-image: url('https://static.wikia.nocookie.net/lololoshhka/images/e/e3/Arhey.jpg/revision/latest/scale-to-width-down/1000?cb=20241222094614&path-prefix=ru');
@@ -290,6 +290,7 @@ table:target{
   font-style: italic;
 
 }
+
 
 
 
