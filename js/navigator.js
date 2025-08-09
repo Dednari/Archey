@@ -11,7 +11,7 @@ function createNavbar() {
     <ul class="navbar-menu">
         <li><a href="index.html" class="nav-link">Главная</a></li>
         <li><a href="char_history.html" class="nav-link">Предыстории</a></li>
-        <li><a href="magic.html" class="nav-link">Магия и божества</a></li>
+        <li><a href="magic.html" class="nav-link">Информация не попавшая в лор</a></li>
         <li><a href="lore.html" class="nav-link">Лор</a></li>
     </ul>
     </header>
