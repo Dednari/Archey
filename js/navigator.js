@@ -13,7 +13,7 @@ function createNavbar() {
         <li><a href="char_history.html" class="nav-link">Предыстории</a></li>
         <li><a href="magic.html" class="nav-link">Информация не попавшая в лор</a></li>
         <li><a href="lore.html" class="nav-link">Лор</a></li>
-        <li><a href="spells.html" class="nav-link">ХБ заклинания</a></li>
+        <li><a href="Spells.html" class="nav-link">ХБ заклинания</a></li>
     </ul>
     </header>
     `;
