@@ -26,6 +26,15 @@
 <img src="Red.png" alt="Ред" class="image-left" />
 
 <p><h1>А что ты ожидал тут увидеть?????</h1></p>
+  <p><span class="clickable" data-tooltip="Хуууууууууууууууууй 2">Танец Даны?</span></p>
+
+<script>
+document.querySelectorAll('.clickable').forEach(element => {
+  element.addEventListener('click', () => {
+    alert(element.getAttribute('data-tooltip'));
+  });
+});
+</script>
   <img src="https://media1.tenor.com/m/Z6gmDPeM6dgAAAAC/dance-moves.gif" alt="я джифка">
   <b>Михаил</b>
   <p>Какой раздел?</p>
