@@ -5,35 +5,83 @@
     <meta name="author" content="svoe95">
     <meta name="keywords" content="dnd,fantasy,dark,game,roleplay,tabletop">
     <link rel="stylesheet" href="css/style.css">
-    <title>Главная страница</title>
-  </head>
-  <body>
-    <header>
-      <a href="index.html">Главная</a>
-      <!-- <a href="#" id="chosen">Переработанные механики</a> -->
-      <a href="char_history.html">Предыстории</a>
-      <a href="magic.html">Магия и божества</a>
-      <!-- <a href="#">Карта</a> -->
-      <!-- <a href="#">Предметы</a> -->
-      <!-- <a href="#">Трекер инициативы</a> -->
-      <a href="lore.html">Лор</a>
-    </header>
-    <main>
-      <header>
-        <a href="#">Заклинания</a>
-        <a href="#">Волшебник</a>
-        <a href="#">Колдун</a>
-      </header>
+   <!DOCTYPE html>
+<style>
+  #экран {
+    font-size: 24px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  .кнопка {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin: 5px;
+  }
+</style>
+<script>
+let введённыйКод = "";
 
-      <!-- Карточка тектса -->
-      <div class="card" hidden>
-        <h1>Заголовок</h1>
-        <h3><i>Подзаголовок</i></h3>
-        <p class="main_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-    </main>
-    <footer></footer>
-  </body>
+function нажатьЦифру(цифра) {
+    введённыйКод += цифра;
+    document.getElementById("экран").value = введённыйКод;
+}
+
+function очистить() {
+    введённыйКод = "";
+    document.getElementById("экран").value = "";
+}
+
+function проверитьКод() {
+    const правильныйКод = "1234"; // замените на нужный вам код
+    if (введённыйКод === правильныйКод) {
+        alert("Поздравляем! Вы ввели правильный код.");
+        очистить();
+    } else {
+        alert("Неверный код. Попробуйте снова.");
+        очистить();
+    }
+}
+</script>
+</head>
+<body>
+
+<h2>Введите код:</h2>
+
+<!-- Поле отображения введенного кода -->
+<input type="text" id="экран" readonly />
+
+<!-- Кнопки цифр -->
+<div>
+  <button class="кнопка" onclick="нажатьЦифру('1')">1</button>
+  <button class="кнопка" onclick="нажатьЦифру('2')">2</button>
+  <button class="кнопка" onclick="нажатьЦифру('3')">3</button>
+</div>
+<div>
+  <button class="кнопка" onclick="нажатьЦифру('4')">4</button>
+  <button class="кнопка" onclick="нажатьЦифру('5')">5</button>
+  <button class="кнопка" onclick="нажатьЦифру('6')">6</button>
+</div>
+<div>
+  <button class="кнопка" onclick="нажатьЦифру('7')">7</button>
+  <button class="кнопка" onclick="нажатьЦифру('8')">8</button>
+  <button class="кнопка" onclick="нажатьЦифру('9')">9</button>
+</div>
+<div>
+  <button class="кнопка" onclick="нажатьЦифру('0')">0</button>
+  <button class="кнопка" onclick="очистить()">C</button> <!-- очистить -->
+</div>
+
+<!-- Кнопка проверки -->
+<div style="margin-top:10px;">
+  <button onclick="проверитьКод()">Проверить</button>
+</div>
+
+</body>
 </html>
+
 
 
