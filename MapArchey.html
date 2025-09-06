@@ -127,6 +127,79 @@ img.addEventListener('click', () => {
 });
 </script>
 
+   <style>
+  body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  #movingImage {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    user-select: none;
+  }
+</style>
+</head>
+<body>
+
+<img src="Mors.png" id="movingImage" alt="Картинка" />
+
+<script>
+const img = document.getElementById('movingImage');
+const step = 20; // скорость убегания
+const imgSize = 100; // размер картинки в пикселях
+
+// начальные координаты
+let x = Math.random() * (window.innerWidth - imgSize);
+let y = Math.random() * (window.innerHeight - imgSize);
+img.style.left = x + 'px';
+img.style.top = y + 'px';
+
+document.addEventListener('mousemove', (e) => {
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+
+  // координаты центра картинки
+  const imgX = x + imgSize / 2;
+  const imgY = y + imgSize / 2;
+
+  // расстояние между курсором и центром картинки
+  const dx = mouseX - imgX;
+  const dy = mouseY - imgY;
+
+  // если курсор близко к картинке, перемещаем её в противоположную сторону
+  if (Math.abs(dx) < 150 && Math.abs(dy) < 150) {
+    // определяем направление для убегания
+    if (dx > 0) {
+      x -= step; // убегает влево
+    } else {
+      x += step; // убегает вправо
+    }
+
+    if (dy > 0) {
+      y -= step; // убегает вверх
+    } else {
+      y += step; // убегает вниз
+    }
+
+    // ограничиваем границы окна
+    x = Math.max(0, Math.min(window.innerWidth - imgSize, x));
+    y = Math.max(0, Math.min(window.innerHeight - imgSize, y));
+
+    img.style.left = x + 'px';
+    img.style.top = y + 'px';
+  }
+});
+
+// при клике показываем окно с текстом
+img.addEventListener('click', () => {
+  alert('третья цифра: 8');
+});
+</script>
+
 
        <!-- <ul>
 "Кто ты такой???"- Морс собирался на новую казнь, для уничтожения повстанческого движения, как сзади него появилось неизвествное существо. Это был гуманоидный волк с абсолютно черной шерстью и алыми радужками глаз. Он был одет в простую рубаху и штаны с ботинками.
