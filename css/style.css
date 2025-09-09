@@ -14,11 +14,7 @@ html{
   scroll-behavior: smooth;
 }
 
-@media (max-width: 768px) {
-    table {
-        font-size: 0.9rem;
-    }
-}
+
 
 body{
   background-image: url('ArcheyBcg.jpg');
@@ -313,6 +309,7 @@ table:target{
   font-size: 0.9em;
   font-style: italic;
 }
+
 
 
 
