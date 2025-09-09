@@ -197,6 +197,50 @@ document.querySelectorAll('.clickable').forEach(element => {
   <p>"=" — Нейтральные отношения</p>
   <p>"-" — Отрицательные отношения</p>
 
+<style>
+  .beautiful-button {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(101, 91, 255, 0.3);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    outline: none;
+  }
+  .beautiful-button:hover {
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+    box-shadow: 0 15px 20px rgba(101, 91, 255, 0.6);
+    transform: translateY(-3px);
+  }
+  .beautiful-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(101, 91, 255, 0.3);
+  }
+  .arrow {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+  }
+  .beautiful-button:hover .arrow {
+    transform: translateX(5px);
+  }
+</style>
+</head>
+<body>
+
+<button class="beautiful-button">
+  Таблица
+  <span class="arrow">→</span>
+</button>
+
+
+  
 <table>
   <tr>
     <td>&nbsp;</td>
@@ -349,6 +393,7 @@ document.querySelectorAll('.clickable').forEach(element => {
     <script src="js/navigator.js"></script>
   </body>
 </html>
+
 
 
 
