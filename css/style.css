@@ -43,25 +43,51 @@ body{
 
 a:visited{text-decoration: none;}
 
-table {
-  width: 650px;
-  border-top: 7px solid rgb(147, 112, 219);
-  border-collapse: collapse;
-  text-align: center;
-  margin-bottom: 20px;
-  border: 1px solid #dddddd;
+@media (max-width: 600px) {
+  table {
+    border-collapse: separate;
+    font-size: 0.3rem;
+  }
+  table th, table td {
+    padding: 0.25rem;
+  }
 }
-
-td {
-  text-align: left;
-	padding: 10px;
-	border: 3px solid rgb(147, 112, 219);
+@media (max-width: 768px) {
+  table {
+    border-collapse: separate;
+    /*border-spacing: 1;*/
+    font-size: 0.4rem;
+  }
+  table th, table td {
+    padding: 0.3rem;
+  }
+  thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
 }
- th {
-  text-align: center;
-  padding: 10px;
-	border: 3px solid rgb(147, 112, 219);
- }
+table{
+  font-family: "Open Sans", sans-serif;
+}
+td:not(:last-of-type){
+  padding-bottom: 5px;
+}
+td{
+  padding-left: 5px;
+  font-size: 1.15em;
+}
+tr:nth-child(odd){
+  background: rgba(49, 42, 77, 0.3);
+}
+tr:nth-child(even){
+  background: rgba(67, 64, 100, 0.3);
+}
+.table-category-header{
+  font-style: italic;
+  font-size: 1.3em;
+  color: white;
+}
 
 header{
   padding: 25px;
@@ -309,6 +335,7 @@ table:target{
   font-size: 0.9em;
   font-style: italic;
 }
+
 
 
 
