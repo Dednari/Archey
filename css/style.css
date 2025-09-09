@@ -41,6 +41,26 @@ body{
 
 a:visited{text-decoration: none;}
 
+table {
+  width: 650px;
+  border-top: 7px solid rgb(43, 129, 17);
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+}
+
+td {
+  text-align: left;
+	padding: 10px;
+	border: 3px solid rgb(43, 129, 17);
+}
+ th {
+  text-align: center;
+  padding: 10px;
+	border: 3px solid rgb(43, 129, 17);
+ }
+
 header{
   padding: 25px;
   background-color: #140e29;
@@ -287,6 +307,7 @@ table:target{
   font-size: 0.9em;
   font-style: italic;
 }
+
 
 
 
