@@ -53,12 +53,12 @@ table {
 td {
   text-align: left;
 	padding: 10px;
-	border: 3px solid rgb(43, 129, 17);
+	border: 3px solid rgb(147, 112, 219);
 }
  th {
   text-align: center;
   padding: 10px;
-	border: 3px solid rgb(43, 129, 17);
+	border: 3px solid rgb(147, 112, 219);
  }
 
 header{
@@ -307,6 +307,7 @@ table:target{
   font-size: 0.9em;
   font-style: italic;
 }
+
 
 
 
