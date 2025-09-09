@@ -197,7 +197,12 @@ document.querySelectorAll('.clickable').forEach(element => {
   <p>"=" — Нейтральные отношения</p>
   <p>"-" — Отрицательные отношения</p>
 
-<style>
+body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    background: #f5f7fa;
+  }
+
   .beautiful-button {
     background: linear-gradient(45deg, #6a11cb, #2575fc);
     border: none;
@@ -230,17 +235,51 @@ document.querySelectorAll('.clickable').forEach(element => {
   .beautiful-button:hover .arrow {
     transform: translateX(5px);
   }
+
+  /* Карточка */
+  .card {
+    margin-top: 30px;
+    padding: 20px 30px;
+    max-width: 400px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    position: relative;
+  }
+  .card.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .card .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+  }
+  .card .close-btn:hover {
+    color: #2575fc;
+  }
 </style>
 </head>
 <body>
 
-<button class="beautiful-button">
+<button class="beautiful-button" id="showCardBtn">
   Таблица
-  <span class="arrow">→</span>
+  <span class="arrow"></span>
 </button>
 
-
-  
+<div class="card" id="card">
+  <button class="close-btn" id="closeCardBtn" aria-label="Закрыть карточку">&times;</button>
 <table>
   <tr>
     <td>&nbsp;</td>
@@ -363,6 +402,27 @@ document.querySelectorAll('.clickable').forEach(element => {
     <td>&nbsp;</td>
   </tr>
 </table>
+</div>
+
+<script>
+  const showBtn = document.getElementById('showCardBtn');
+  const card = document.getElementById('card');
+  const closeBtn = document.getElementById('closeCardBtn');
+
+  showBtn.addEventListener('click', () => {
+    card.classList.add('show');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    card.classList.remove('show');
+  });
+</script>
+
+</body>
+
+
+  
+
 
 </div>
 
@@ -393,6 +453,7 @@ document.querySelectorAll('.clickable').forEach(element => {
     <script src="js/navigator.js"></script>
   </body>
 </html>
+
 
 
 
