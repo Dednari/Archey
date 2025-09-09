@@ -43,7 +43,7 @@ a:visited{text-decoration: none;}
 
 table {
   width: 650px;
-  border-top: 7px solid rgb(43, 129, 17);
+  border-top: 7px solid rgb(147, 112, 219);
   border-collapse: collapse;
   text-align: center;
   margin-bottom: 20px;
@@ -307,6 +307,7 @@ table:target{
   font-size: 0.9em;
   font-style: italic;
 }
+
 
 
 
