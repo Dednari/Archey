@@ -14,7 +14,9 @@ html{
   scroll-behavior: smooth;
 }
 
-
+header a{
+ display: inline-block;
+}
 
 body{
   background-image: url('ArcheyBcg.jpg');
@@ -335,6 +337,7 @@ table:target{
   font-size: 0.9em;
   font-style: italic;
 }
+
 
 
 
