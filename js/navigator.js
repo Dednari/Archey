@@ -14,7 +14,6 @@ function createNavbar() {
         <li><a href="magic.html" class="nav-link">Информация не попавшая в лор</a></li>
         <li><a href="lore.html" class="nav-link">Лор</a></li>
         <li><a href="Spells.html" class="nav-link">ХБ заклинания</a></li>
-        <li><a href="MapArchey.html" class="nav-link">Фф про Авиора и Морса</a></li>
         <li><a href="gods.html" class="nav-link">Боги</a></li>
         
     </ul>
