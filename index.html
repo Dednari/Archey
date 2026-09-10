@@ -20,27 +20,32 @@
         <span></span>
     </button>
 
-    <!-- 2. ЗАТЕМ ИДЕТ САМА ШТОРКА (скрытая по умолчанию) -->
-    <div class="side-drawer" id="sideDrawer">
-        <div class="drawer-header">
-            <h3>Навигация</h3>
-            <button class="close-btn" id="closeDrawer">&times;</button>
-        </div>
-        
-        <!-- Меню с аккордеоном -->
-        <div class="drawer-menu">
-            <button class="menu-category" id="arheyToggle">
-                Архей <span class="arrow">▼</span>
-            </button>
-            <ul class="submenu" id="arheySubmenu">
-                <li><a href="index.html">🏠 Главная</a></li>
-                <li><a href="gods.html">⚡ Боги</a></li>
-                <li><a href="Spells.html">✨ Заклинания</a></li>
-                <li><a href="lore.html">📜 Лор</a></li>
-                <li><a href="char_history.html">👤 Предыстории</a></li>
-            </ul>
-        </div>
+    <!-- Сама выдвигающаяся шторка -->
+<div class="side-drawer" id="sideDrawer">
+    <div class="drawer-header">
+        <h3>Навигация</h3>
+        <button class="close-btn" id="closeDrawer">&times;</button>
     </div>
+    
+    <!-- Заголовок раздела -->
+    <div class="drawer-section-title">Архей</div>
+
+    <!-- Ссылки раздела Архей -->
+    <ul class="drawer-menu">
+        <li><a href="index.html">🏠 Главная</a></li>
+        <li><a href="gods.html">⚡ Боги</a></li>
+        <li><a href="Spells.html">✨ Заклинания</a></li>
+        <li><a href="lore.html">📜 Лор</a></li>
+        <li><a href="char_history.html">👤 Предыстории</a></li>
+    </ul>
+
+    <!-- Второй раздел -->
+    <div class="drawer-section-title">Орден Волка</div>
+    <ul class="drawer-menu">
+        <li><a href="#">🐺 О ордене</a></li>
+        <li><a href="#">⚔️ Участники</a></li>
+    </ul>
+</div>
 
     <!-- 3. ОВЕРЛЕЙ (затемнение) -->
     <div class="overlay" id="overlay"></div>
