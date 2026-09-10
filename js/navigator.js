@@ -1,24 +1,8 @@
-/*/ Функция для создания и добавления навигационной панели
+// Функция для создания и добавления навигационной панели
 function createNavbar() {
     // HTML структура навигационной панели
     const navbarHTML = `
-    <header>
-    <div class="navbar-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <ul class="navbar-menu">
-        <li><a href="index.html" class="nav-link">Главная</a></li>
-        <li><a href="char_history.html" class="nav-link">Предыстории</a></li>
-        <li><a href="pclass.html" class="nav-link">Подклассы</a></li>
-        <li><a href="magic.html" class="nav-link">Информация не попавшая в лор</a></li>
-        <li><a href="lore.html" class="nav-link">Лор</a></li>
-        <li><a href="Spells.html" class="nav-link">ХБ заклинания</a></li>
-        <li><a href="gods.html" class="nav-link">Боги</a></li>
-        
-    </ul>
-    </header>
+
     `;
 
     // Добавляем навигационную панель в начало body
@@ -45,8 +29,8 @@ function setActiveLink() {
             link.classList.add('active');
         }
     });
-}*
-*/
+}
+
 // Выполняем создание навигационной панели при загрузке страницы
 document.addEventListener('DOMContentLoaded', createNavbar);
 
