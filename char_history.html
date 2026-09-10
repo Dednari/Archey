@@ -9,32 +9,45 @@
     <title>Предыстории</title>
   </head>
   <body>
-    <!-- Кнопка открытия меню (Гамбургер) -->
-<button class="menu-toggle" id="menuToggle">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
+    
+    <!-- 1. СНАЧАЛА ИДЕТ КНОПКА ГАМБУРГЕР -->
+    <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-<!-- Сама выдвигающаяся шторка -->
+    <!-- Сама выдвигающаяся шторка -->
 <div class="side-drawer" id="sideDrawer">
     <div class="drawer-header">
-        <h3>Archey Navigation</h3>
+        <h3>Навигация</h3>
         <button class="close-btn" id="closeDrawer">&times;</button>
     </div>
+    
+    <!-- Заголовок раздела -->
+    <div class="drawer-section-title"><h2>Архей</h2></div>
+
+    <!-- Ссылки раздела Архей -->
     <ul class="drawer-menu">
         <li><a href="index.html">🏠 Главная</a></li>
-        <li><a href="MapArchey.html">🗺️ Карта Архей</a></li>
         <li><a href="gods.html">⚡ Боги</a></li>
         <li><a href="Spells.html">✨ Заклинания</a></li>
-        <li><a href="classes.html">🛡️ Классы</a></li>
         <li><a href="lore.html">📜 Лор</a></li>
-        <li><a href="char_history.html">👤 История персонажа</a></li>
+        <li><a href="char_history.html">👤 Предыстории</a></li>
+    </ul>
+
+    <!-- Второй раздел -->
+    <div class="drawer-section-title"><h2>Орден Волка</h2></div>
+    <ul class="drawer-menu">
+        <li><a href="#">🐺 О ордене</a></li>
+        <li><a href="#">⚔️ Участники</a></li>
     </ul>
 </div>
 
-<!-- Затемнение фона при открытом меню -->
-<div class="overlay" id="overlay"></div>
+    <!-- 3. ОВЕРЛЕЙ (затемнение) -->
+    <div class="overlay" id="overlay"></div>
+
+    
     <main>
       <header>
         <!-- <ul>
