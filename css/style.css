@@ -1,8 +1,9 @@
+/* =========================================================
+   1. ПОДКЛЮЧЕНИЕ ШРИФТОВ И ПЕРЕМЕННЫЕ
+   ========================================================= */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-*{
-  /*margin: 0;*/
-  /*padding: 0;*/
+:root {
   --panel_background: rgba(24, 13, 52, 0.5);
   --highlight_background: rgba(60, 44, 124, 0.5);
   --highlight_border: rgb(255, 204, 0);
@@ -10,162 +11,361 @@
   --link_color: #dcd9e5;
 }
 
-/* --- Стили для Шторки --- */
 
-/* Кнопка-гамбургер */
-.menu-toggle {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 999;
-    background: #24292e; /* Цвет как у GitHub */
-    border: 1px solid #444;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    transition: 0.3s;
-}
-.menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    border-radius: 2px;
-    transition: 0.3s;
-}
-.menu-toggle:hover {
-    background: #444;
-}
-
-/* Сама шторка */
-.side-drawer {
-    position: fixed;
-    top: 0;
-    left: -300px; /* Изначально скрыта слева */
-    width: 280px;
-    height: 100vh;
-    background-color: #1a1a1a; /* Темный фон */
-    color: #fff;
-    z-index: 1000;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
-    transition: left 0.3s ease-in-out; /* Плавный выезд */
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-}
-
-/* Класс, который добавляется через JS для открытия */
-.side-drawer.open {
-    left: 0;
-}
-
-/* Шапка меню */
-.drawer-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #333;
-    background: #24292e;
-}
-.drawer-header h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #58a6ff;
-}
-
-/* Кнопка закрытия (крестик) */
-.close-btn {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 2rem;
-    cursor: pointer;
-    line-height: 1;
-}
-.close-btn:hover {
-    color: #ff7b72;
-}
-
-/* Список ссылок */
-.drawer-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.drawer-menu li {
-    border-bottom: 1px solid #2a2a2a;
-}
-.drawer-menu a {
-    display: block;
-    padding: 15px 20px;
-    color: #c9d1d9;
-    text-decoration: none;
-    font-family: sans-serif;
-    transition: 0.2s;
-}
-.drawer-menu a:hover {
-    background-color: #21262d;
-    color: #fff;
-    padding-left: 30px; /* Эффект сдвига при наведении */
-}
-
-/* Затемнение фона (Overlay) */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 998;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s;
-}
-.overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-html{
+/* =========================================================
+   2. БАЗОВЫЕ СТИЛИ (BODY, SCROLLBAR, ССЫЛКИ)
+   ========================================================= */
+html {
   scroll-behavior: smooth;
 }
 
-header a{
- display: inline-block;
-}
-
-body{
-  background-image: url('ArcheyBcg.jpg');
-  background-size: cover; 
-}
-
-body{
+body {
   margin: 0;
   padding: 0;
   background-color: #0c0917;
+  background-image: url('ArcheyBcg.jpg');
+  background-size: cover;
   color: var(--text_color);
   font-family: "Noto Sans", sans-serif;
 }
 
+/* Кастомный скроллбар */
 *::-webkit-scrollbar {
-    width: 10px;
-    background-color: #1b172d;
+  width: 10px;
+  background-color: #1b172d;
 }
 *::-webkit-scrollbar-thumb {
-    background: #161a3a;
-    border-radius: 5px;
+  background: #161a3a;
+  border-radius: 5px;
 }
 *::-webkit-scrollbar-thumb:hover {
-    background: #161a3a;
+  background: #161a3a;
 }
 
-a:visited{text-decoration: none;}
+a:visited {
+  text-decoration: none;
+}
 
+
+/* =========================================================
+   3. ШТОРКА (SIDE DRAWER) И ГАМБУРГЕР
+   ========================================================= */
+
+/* Кнопка-гамбургер */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  background: #24292e;
+  border: 1px solid #444;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: 0.3s;
+}
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.menu-toggle:hover {
+  background: #444;
+}
+
+/* Сама шторка */
+.side-drawer {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Скрыта за левым краем */
+  width: 280px;
+  height: 100vh;
+  background-color: #1a1a1a;
+  color: #fff;
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  transition: left 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.side-drawer.open {
+  left: 0;
+}
+
+/* Шапка шторки */
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #333;
+  background: #24292e;
+}
+.drawer-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #58a6ff;
+}
+
+/* Кнопка закрытия (крестик) */
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.close-btn:hover {
+  color: #ff7b72;
+}
+
+/* Меню внутри шторки */
+.drawer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.drawer-menu li {
+  border-bottom: 1px solid #2a2a2a;
+}
+.drawer-menu a {
+  display: block;
+  padding: 15px 20px;
+  color: #c9d1d9;
+  text-decoration: none;
+  font-family: sans-serif;
+  transition: 0.2s;
+}
+.drawer-menu a:hover {
+  background-color: #21262d;
+  color: #fff;
+  padding-left: 30px;
+}
+
+/* Кнопки-категории (аккордеон) */
+.menu-category {
+  width: 100%;
+  background: #1a1a1a;
+  border: none;
+  color: #fff;
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  transition: background 0.2s;
+}
+.menu-category:hover {
+  background: #2a2a2a;
+}
+.menu-category .arrow {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+.menu-category.active .arrow {
+  transform: rotate(180deg);
+}
+
+/* Подсписок (выпадающие ссылки) */
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background-color: #111;
+}
+.side-drawer .submenu li {
+  border-bottom: none;
+  list-style: none;
+}
+.side-drawer .submenu li a {
+  display: block;
+  padding: 12px 20px 12px 45px;
+  color: #c9d1d9 !important;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 1rem;
+  background: transparent;
+  margin: 0;
+  border-radius: 0;
+  transition: 0.2s;
+}
+.side-drawer .submenu li a:hover {
+  background-color: #21262d;
+  color: #fff;
+  padding-left: 55px;
+}
+
+/* Затемнение фона */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* =========================================================
+   4. ШАПКА САЙТА (HEADER)
+   ========================================================= */
+header {
+  padding: 25px;
+  background-color: #140e29;
+  list-style-type: none;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+header ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header li {
+  display: inline;
+}
+header a {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  color: inherit;
+  background-color: #22214b;
+  border-radius: 15px;
+  font-size: 1.3em;
+  text-decoration: none;
+}
+header a:hover {
+  background-color: #323177;
+}
+header a.active {
+  background-color: #201f37;
+  color: #a2a7ad;
+  font-weight: bold;
+}
+header a.active:hover {
+  cursor: default;
+}
+
+/* Мобильная адаптация шапки */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.navbar-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 2px 0;
+  transition: all 0.3s ease;
+}
+
+
+/* =========================================================
+   5. ОСНОВНОЙ КОНТЕНТ (MAIN)
+   ========================================================= */
+main header {
+  padding: 10px;
+  background-color: rgba(120, 120, 216, 0.1);
+}
+main header a {
+  border-radius: 5px;
+  font-size: 1.1em;
+  display: inline-block;
+}
+#chosen {
+  background-color: #201f37;
+}
+#chosen:hover {
+  cursor: default;
+}
+
+
+/* =========================================================
+   6. ТИПОГРАФИКА (ТЕКСТ)
+   ========================================================= */
+p {
+  margin: 6px;
+  font-size: 14px;
+  font-style: normal;
+}
+p b {
+  font-size: 1rem;
+}
+p::first-letter {
+  font-size: 1.2em;
+}
+b {
+  color: white;
+}
+li {
+  font-size: 0.9em;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 5px;
+  color: white;
+  font-weight: bold;
+}
+li a {
+  color: #7f77bd;
+}
+li a:hover {
+  color: #6c78be;
+}
+
+
+/* =========================================================
+   7. ТАБЛИЦЫ
+   ========================================================= */
+table {
+  font-family: "Open Sans", sans-serif;
+}
+td:not(:last-of-type) {
+  padding-bottom: 5px;
+}
+td {
+  padding-left: 5px;
+  font-size: 1.15em;
+}
+tr:nth-child(odd) {
+  background: rgba(49, 42, 77, 0.3);
+}
+tr:nth-child(even) {
+  background: rgba(67, 64, 100, 0.3);
+}
+.table-category-header {
+  font-style: italic;
+  font-size: 1.3em;
+  color: white;
+}
+
+/* Мобильные таблицы */
 @media (max-width: 600px) {
   table {
     border-collapse: separate;
@@ -178,7 +378,6 @@ a:visited{text-decoration: none;}
 @media (max-width: 768px) {
   table {
     border-collapse: separate;
-    /*border-spacing: 1;*/
     font-size: 0.4rem;
   }
   table th, table td {
@@ -190,182 +389,12 @@ a:visited{text-decoration: none;}
     z-index: 2;
   }
 }
-table{
-  font-family: "Open Sans", sans-serif;
-}
-td:not(:last-of-type){
-  padding-bottom: 5px;
-}
-td{
-  padding-left: 5px;
-  font-size: 1.15em;
-}
-tr:nth-child(odd){
-  background: rgba(49, 42, 77, 0.3);
-}
-tr:nth-child(even){
-  background: rgba(67, 64, 100, 0.3);
-}
-.table-category-header{
-  font-style: italic;
-  font-size: 1.3em;
-  color: white;
-}
 
-header{
-  padding: 25px;
-  background-color: #140e29;
-  list-style-type: none;
-  align-items: center;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
 
-header ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-header a{
-  padding: 10px;
-  margin: 5px;
-  color: inherit;
-  background-color: #22214b;
-  border-radius: 15px;
-  font-size: 1.3em;
-  text-decoration: none;
-}
-header a:hover{
-  background-color: #323177;
-  /* color: #18182a; */
-}
-header ul li a{
-  padding: 10px;
-  margin: 5px;
-  color: inherit;
-  background-color: #22214b;
-  border-radius: 15px;
-  font-size: 1.3em;
-  text-decoration: none;
-}
-header ul li a:hover{
-  background-color: #323177;
-  /* color: #18182a; */
-}
-
-header a.active {
-  background-color: #201f37;
-  color: #a2a7ad;
-  font-weight: bold;
-}
-header a.active:hover {
-  cursor: default;
-}
-
-.navbar-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.navbar-toggle span {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 2px 0;
-  transition: all 0.3s ease;
-}
-
-/* Адаптивный дизайн для мобильных устройств */
-@media screen and (max-width: 768px) {
-  .navbar-toggle {
-    display: flex;
-  }
-
-  header {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #333;
-    flex-direction: column;
-    padding: 1rem;
-  }
-
-  header.active {
-    display: flex;
-  }
-
-  header ul li {
-    margin: 0.5rem 0;
-  }
-}
-
-header li{
-  display: inline;
-}
-
-main header{
-  padding: 10px;
-  background-color: rgba(120, 120, 216, 0.1);
-}
-main header a{
-  border-radius: 5px;
-  font-size: 1.1em;
-  display: inline-block;
-}
-
-#chosen{
-  background-color: #201f37;
-}
-
-#chosen:hover{
-  cursor: default;
-}
-
-p{
-  margin: 6px;
-  font-size: 14px;
-  font-style: normal;
-}
-
-p b{
-  font-size: 1rem;
-}
-
-br{
-  /*margin: 5px;*/
-}
-
-p::first-letter{
-  font-size: 1.2em
-}
-
-b{
-  color: white;
-}
-
-li{
-  font-size: 0.9em;
-}
-
-h1, h2, h3, h4, h5, h6{
-  margin: 5px;
-  color: white;
-  font-weight: bold;
-}
-
-li a{
-  color: #7f77bd;
-}
-
-li a:hover{
-  color: #6c78be;
-}
-.card{
+/* =========================================================
+   8. КАРТОЧКИ И КОНТЕЙНЕРЫ (CARDS)
+   ========================================================= */
+.card {
   width: 40%;
   max-width: 95%;
   max-height: 40%;
@@ -374,20 +403,15 @@ li a:hover{
   background-color: var(--panel_background);
   border-radius: 15px;
   border: #612ace solid 1px;
-  /*#1b0f46*/
   border-bottom: 0;
   margin: 10px;
   padding: 10px;
 }
-.card table{
+.card table {
   border: #22214b solid;
   border-radius: 15px;
 }
 .container {
-
-  /*display: flex;*/
-  /*flex-wrap: wrap; !* Перенос на новую строку *!*/
-  /*gap: 10px; !* Отступ между элементами *!*/
   width: 85%;
   background: rgba(0, 0, 0, 0.05);
   border: #161a3a solid 1px;
@@ -397,22 +421,18 @@ li a:hover{
 .item {
   width: 100%;
   margin-bottom: 50px;
-  /* flex: 1 0 auto; /* Элементы растягиваются, но не сжимаются ниже своего размера */
-  /* или */
-  /*flex: 0 0 30%; !* Фиксированная ширина (200px), но перенос при нехватке места *!*/
 }
-.item .item{
+.item .item {
   border-top: 0;
 }
-.item .item:not(:last-of-type){
-  /*margin-top: 10px;*/
+.item .item:not(:last-of-type) {
   margin-bottom: 10px;
 }
-.item .item:not(:first-of-type){
+.item .item:not(:first-of-type) {
   margin-top: 10px;
 }
-.item a{
-  background: rgba(11,25,84,0.85);
+.item a {
+  background: rgba(11, 25, 84, 0.85);
   color: var(--link_color);
   font-size: 1.2em;
   text-decoration: none;
@@ -421,10 +441,10 @@ li a:hover{
   padding-right: 7px;
   border-radius: 5px;
 }
-.item a:hover{
+.item a:hover {
   background: rgba(60, 43, 138, 0.85);
 }
-.item:target{
+.item:target {
   background-color: var(--highlight_background);
   border-width: 4px;
   border-style: dashed;
@@ -432,40 +452,29 @@ li a:hover{
   border-top: solid 1px;
   border-color: var(--highlight_border);
 }
-table:target{
+table:target {
   background-color: var(--highlight_background);
   border-width: 1px;
   border-style: solid;
   border-color: var(--highlight_border);
 }
-.wider{
+.wider {
   width: 85%;
   border: #695d47 solid 2px;
   border-radius: 10px;
   border-bottom: 0;
 }
-.center{
+.center {
   margin-left: auto;
   margin-right: auto;
 }
-.title{
+.title {
   color: white;
   font-size: 0.9em;
   font-weight: bold;
 }
-.subtitle{
+.subtitle {
   color: white;
   font-size: 0.9em;
   font-style: italic;
 }
-
-
-
-
-
-
-
-
-
-
-
