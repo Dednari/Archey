@@ -146,68 +146,119 @@ a:visited {
 }
 .drawer-menu a:hover {
   background-color: #21262d;
-  color: #fff;
-  padding-left: 30px;
+/* =========================================================
+   3. ШТОРКА (SIDE DRAWER) И ГАМБУРГЕР
+   ========================================================= */
+
+/* Кнопка-гамбургер */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  background: #24292e;
+  border: 1px solid #444;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: 0.3s;
+}
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.menu-toggle:hover {
+  background: #444;
 }
 
-/* Кнопки-категории (аккордеон) */
-.menu-category {
-  width: 100%;
-  background: #1a1a1a;
-  border: none;
+/* Сама шторка */
+.side-drawer {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 280px;
+  height: 100vh;
+  background-color: #1a1a1a;
   color: #fff;
-  text-align: left;
-  padding: 15px 20px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  transition: left 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.side-drawer.open {
+  left: 0;
+}
+
+/* Шапка шторки */
+.drawer-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
   border-bottom: 1px solid #333;
-  transition: background 0.2s;
+  background: #24292e;
 }
-.menu-category:hover {
-  background: #2a2a2a;
-}
-.menu-category .arrow {
-  font-size: 0.8rem;
-  transition: transform 0.3s ease;
-}
-.menu-category.active .arrow {
-  transform: rotate(180deg);
+.drawer-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #58a6ff;
 }
 
-/* Подсписок (выпадающие ссылки) */
-.submenu {
+/* Кнопка закрытия (крестик) */
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.close-btn:hover {
+  color: #ff7b72;
+}
+
+/* Красивый заголовок раздела (Архей / Орден Волка) */
+.drawer-section-title {
+  padding: 20px 20px 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+/* Меню внутри шторки */
+.drawer-menu {
   list-style: none;
   padding: 0;
-  margin: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  background-color: #111;
+  margin: 0 0 15px 0;
 }
-.side-drawer .submenu li {
-  border-bottom: none;
+.drawer-menu li {
   list-style: none;
 }
-.side-drawer .submenu li a {
+.drawer-menu a {
   display: block;
-  padding: 12px 20px 12px 45px;
-  color: #c9d1d9 !important;
+  padding: 12px 20px 12px 35px;
+  color: #c9d1d9;
   text-decoration: none;
   font-family: sans-serif;
   font-size: 1rem;
-  background: transparent;
-  margin: 0;
-  border-radius: 0;
   transition: 0.2s;
+  border-left: 3px solid transparent;
 }
-.side-drawer .submenu li a:hover {
+.drawer-menu a:hover {
   background-color: #21262d;
   color: #fff;
-  padding-left: 55px;
+  padding-left: 45px;
+  border-left: 3px solid #58a6ff;
 }
 
 /* Затемнение фона */
@@ -227,7 +278,6 @@ a:visited {
   opacity: 1;
   visibility: visible;
 }
-
 
 /* =========================================================
    4. ШАПКА САЙТА (HEADER)
