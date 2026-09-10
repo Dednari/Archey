@@ -290,8 +290,19 @@ header a.active:hover {
 /* =========================================================
    5. ОСНОВНОЙ КОНТЕНТ (MAIN)
    ========================================================= */
+header {
+  padding: 25px 25px 25px 80px; /* Слева добавили 80px под гамбургер */
+  background-color: #140e29;
+  list-style-type: none;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box; /* важно, чтобы padding не расширял блок */
+}
+
 main header {
-  padding: 10px;
+  padding: 10px 10px 10px 80px; /* Слева тоже освобождаем место */
   background-color: rgba(120, 120, 216, 0.1);
 }
 main header a {
