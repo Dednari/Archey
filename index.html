@@ -9,43 +9,39 @@
     <title>Главная страница</title>
   </head>
   <body>
-    <!-- Кнопка открытия меню (Гамбургер) -->
-<button class="menu-toggle" id="menuToggle">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
-
-<!-- Кнопка открытия меню (Гамбургер) -->
-<button class="menu-toggle" id="menuToggle">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
-
-<div class="drawer-menu">
-    <!-- Кнопка-заголовок "Архей" -->
-    <button class="menu-category" id="arheyToggle">
-        Архей <span class="arrow">▼</span>
-    </button>
     
-    <!-- Скрытый подсписок -->
-    <ul class="submenu" id="arheySubmenu">
-        <li><a href="index.html">🏠 Главная</a></li>
-        <li><a href="gods.html">⚡ Боги</a></li>
-        <li><a href="Spells.html">✨ Заклинания</a></li>
-        <li><a href="lore.html">📜 Лор</a></li>
-        <li><a href="char_history.html">👤 Предыстории</a></li>
-    </ul>
 
-    <!-- Следующая категория (если она нужна) -->
-    <button class="menu-category">Орден Волка</button>
-    <!-- Её подсписок, пока скрыт -->
-    <ul class="submenu">
-        <li><a href="#">Пример ссылки</a></li>
-    </ul>
-</div>
+    <!-- 1. СНАЧАЛА ИДЕТ КНОПКА ГАМБУРГЕР -->
+    <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
+    <!-- 2. ЗАТЕМ ИДЕТ САМА ШТОРКА (скрытая по умолчанию) -->
+    <div class="side-drawer" id="sideDrawer">
+        <div class="drawer-header">
+            <h3>Навигация</h3>
+            <button class="close-btn" id="closeDrawer">&times;</button>
+        </div>
+        
+        <!-- Меню с аккордеоном -->
+        <div class="drawer-menu">
+            <button class="menu-category" id="arheyToggle">
+                Архей <span class="arrow">▼</span>
+            </button>
+            <ul class="submenu" id="arheySubmenu">
+                <li><a href="index.html">🏠 Главная</a></li>
+                <li><a href="gods.html">⚡ Боги</a></li>
+                <li><a href="Spells.html">✨ Заклинания</a></li>
+                <li><a href="lore.html">📜 Лор</a></li>
+                <li><a href="char_history.html">👤 Предыстории</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. ОВЕРЛЕЙ (затемнение) -->
+    <div class="overlay" id="overlay"></div>
     
   <noscript>You need to enable JavaScript to run this app.</noscript>
     <main>
