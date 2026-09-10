@@ -12,45 +12,46 @@
 
     <!-- ==================== НАЧАЛО ШТОРКИ ==================== -->
     
-    <!-- Кнопка открытия меню (Гамбургер) -->
+    <!-- 1. СНАЧАЛА ИДЕТ КНОПКА ГАМБУРГЕР -->
     <button class="menu-toggle" id="menuToggle">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
-    <!-- Сама выдвигающаяся шторка (ВАЖНО: этот div оборачивает всё меню) -->
-    <div class="side-drawer" id="sideDrawer">
-        <div class="drawer-header">
-            <h3>Навигация</h3>
-            <button class="close-btn" id="closeDrawer">&times;</button>
-        </div>
-        
-        <div class="drawer-menu">
-            <!-- Кнопка-заголовок "Архей" -->
-            <button class="menu-category" id="arheyToggle">
-                Архей <span class="arrow">▼</span>
-            </button>
-            
-            <!-- Скрытый подсписок -->
-            <ul class="submenu" id="arheySubmenu">
-                <li><a href="index.html">🏠 Главная</a></li>
-                <li><a href="gods.html">⚡ Боги</a></li>
-                <li><a href="Spells.html">✨ Заклинания</a></li>
-                <li><a href="lore.html">📜 Лор</a></li>
-                <li><a href="char_history.html">👤 Предыстории</a></li>
-            </ul>
-
-            <!-- Следующая категория -->
-            <button class="menu-category">Орден Волка</button>
-            <ul class="submenu">
-                <li><a href="#">Пример ссылки</a></li>
-            </ul>
-        </div>
+    <!-- Сама выдвигающаяся шторка -->
+<div class="side-drawer" id="sideDrawer">
+    <div class="drawer-header">
+        <h3>Навигация</h3>
+        <button class="close-btn" id="closeDrawer">&times;</button>
     </div>
+    
+    <!-- Заголовок раздела -->
+    <div class="drawer-section-title"><h2>Архей</h2></div>
 
-    <!-- Затемнение фона при открытом меню -->
+    <!-- Ссылки раздела Архей -->
+    <ul class="drawer-menu">
+        <li><a href="index.html">🏠 Главная</a></li>
+        <li><a href="gods.html">⚡ Боги</a></li>
+        <li><a href="Spells.html">✨ Заклинания</a></li>
+        <li><a href="lore.html">📜 Лор</a></li>
+        <li><a href="char_history.html">👤 Предыстории</a></li>
+    </ul>
+
+    <!-- Второй раздел -->
+    <div class="drawer-section-title"><h2>Орден Волка</h2></div>
+    <ul class="drawer-menu">
+        <li><a href="#">🐺 О ордене</a></li>
+        <li><a href="#">⚔️ Участники</a></li>
+    </ul>
+</div>
+
+    <!-- 3. ОВЕРЛЕЙ (затемнение) -->
     <div class="overlay" id="overlay"></div>
+
+    
+
+    
 
     <!-- ==================== КОНЕЦ ШТОРКИ ==================== -->
 
