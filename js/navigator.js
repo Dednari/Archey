@@ -1,32 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menuToggle');
-    const sideDrawer = document.getElementById('sideDrawer');
-    const closeDrawer = document.getElementById('closeDrawer');
-    const overlay = document.getElementById('overlay');
+    // Находим кнопку и подсписок
+    const arheyToggle = document.getElementById('arheyToggle');
+    const arheySubmenu = document.getElementById('arheySubmenu');
 
-    // Функция открытия меню
-    function openMenu() {
-        sideDrawer.classList.add('open');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
+    if (arheyToggle && arheySubmenu) {
+        arheyToggle.addEventListener('click', () => {
+            // Переключаем класс active для стрелочки
+            arheyToggle.classList.toggle('active');
+            
+            // Если подсписок открыт - закрываем, если закрыт - открываем
+            if (arheySubmenu.style.maxHeight) {
+                arheySubmenu.style.maxHeight = null;
+            } else {
+                // Устанавливаем высоту равной высоте содержимого
+                arheySubmenu.style.maxHeight = arheySubmenu.scrollHeight + "px";
+            }
+        });
     }
 
-    // Функция закрытия меню
-    function closeMenu() {
-        sideDrawer.classList.remove('open');
-        overlay.classList.remove('active');
-        document.body.style.overflow = ''; // Возвращаем прокрутку
-    }
-
-    // Слушатели событий
-    if(menuToggle) menuToggle.addEventListener('click', openMenu);
-    if(closeDrawer) closeDrawer.addEventListener('click', closeMenu);
-    if(overlay) overlay.addEventListener('click', closeMenu); // Закрытие по клику на фон
-
-    // Закрытие по клавише Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && sideDrawer.classList.contains('open')) {
-            closeMenu();
-        }
+    // Если у вас будут другие категории, логику можно сделать универсальной:
+    const allCategories = document.querySelectorAll('.menu-category');
+    allCategories.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Находим следующий элемент после кнопки (это и есть наш ul)
+            const submenu = this.nextElementSibling;
+            if (submenu && submenu.classList.contains('submenu')) {
+                this.classList.toggle('active');
+                if (submenu.style.maxHeight) {
+                    submenu.style.maxHeight = null;
+                } else {
+                    submenu.style.maxHeight = submenu.scrollHeight + "px";
+                }
+            }
+        });
     });
 });
