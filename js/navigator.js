@@ -1,4 +1,4 @@
-// Функция для создания и добавления навигационной панели
+/*/ Функция для создания и добавления навигационной панели
 function createNavbar() {
     // HTML структура навигационной панели
     const navbarHTML = `
@@ -45,8 +45,8 @@ function setActiveLink() {
             link.classList.add('active');
         }
     });
-}
-
+}*
+*/
 // Выполняем создание навигационной панели при загрузке страницы
 document.addEventListener('DOMContentLoaded', createNavbar);
 
