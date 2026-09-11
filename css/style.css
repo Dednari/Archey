@@ -10,9 +10,12 @@
   --text_color: #eae5eb;
   --link_color: #dcd9e5;
 
-  /* Пропорции карточки бога (ширина / высота) */
-  --god-card-ratio: 0.75; /* 3:4 — вертикальная */
+  /* Пропорция карточки (ширина / высота) */
+  --god-card-ratio: 0.75;
   --god-card-gap: 20px;
+
+  /* Насколько карточка занимает высоту экрана (0.45 = 45%) */
+  --god-card-vh: 45vh;
 }
 
 /* =========================================================
@@ -522,10 +525,9 @@ table:target {
 
 .god-card {
   position: relative;
-  /* Ширина: 85% от высоты экрана * пропорцию, но не меньше 260px и не больше 500px */
   flex: 0 0 auto;
-  width: clamp(45vh * var(--god-card-ratio));
-  height: clamp(45vh);
+  width: calc(var(--god-card-vh) * var(--god-card-ratio));
+  height: var(--god-card-vh);
   margin: 0;
   padding: 0;
   scroll-snap-align: start;
@@ -536,7 +538,6 @@ table:target {
   background: #1a1a1a;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-
 .god-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(97, 42, 206, 0.6);
@@ -597,13 +598,13 @@ table:target {
 }
 
 /* Мобильные */
-@media {
+@media (max-width: 768px) {
   .gods-carousel {
     padding: 15px;
     gap: 12px;
   }
   .god-card {
-    /* На телефоне карточка занимает ~80% ширины экрана */
+    /* На телефоне считаем от ширины экрана, а не от высоты */
     width: 80vw;
     height: calc(80vw / var(--god-card-ratio));
   }
