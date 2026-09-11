@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="author" content="svoe95">
     <meta name="keywords" content="dnd,fantasy,dark,game,roleplay,tabletop">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <title>Древнейшие Боги</title>
@@ -42,50 +43,48 @@
 
     <div class="overlay" id="overlay"></div>
 
-    <main>
-      <header>
-                <a href="gods.html" class="active">⚡ Древнейшие Боги</a>
-      </header>
-   <!-- ============ КАРУСЕЛЬ БОГОВ ============ -->
-<div class="gods-carousel">
+    <!-- ============ КНОПКА ПЕРЕКЛЮЧЕНИЯ КАРУСЕЛИ ============ -->
+    <button class="carousel-next-btn" id="carouselNextBtn">→</button>
 
-  <div class="god-card" data-god="zijitel">
-    <img src="img/RedPr.png" alt="Зиждитель">
-    <div class="god-name">Зиждитель</div>
-  </div>
+    <!-- ============ КАРУСЕЛЬ БОГОВ ============ -->
+    <div class="gods-carousel" id="godsCarousel">
 
-  <div class="god-card" data-god="ao">
-    <img src="img/Ao.png" alt="Лорд Ао">
-    <div class="god-name">Лорд Ао</div>
-  </div>
+      <div class="god-card" data-god="zijitel">
+        <img src="img/RedPr.png" alt="Зиждитель">
+        <div class="god-name">Зиждитель</div>
+      </div>
 
-  <div class="god-card" data-god="ronova">
-    <img src="img/Ronova.jpg" alt="Ронова">
-    <div class="god-name">Ронова</div>
-  </div>
+      <div class="god-card" data-god="ao">
+        <img src="img/Ao.png" alt="Лорд Ао">
+        <div class="god-name">Лорд Ао</div>
+      </div>
 
-  <div class="god-card" data-god="aspir">
-    <img src="img/Aspir.jpg" alt="Аспир">
-    <div class="god-name">Аспир</div>
-  </div>
+      <div class="god-card" data-god="ronova">
+        <img src="img/Ronova.jpg" alt="Ронова">
+        <div class="god-name">Ронова</div>
+      </div>
 
-  <div class="god-card" data-god="mofara">
-    <img src="img/Mofara.png" alt="Мофара">
-    <div class="god-name">Мофара</div>
-  </div>
+      <div class="god-card" data-god="aspir">
+        <img src="img/Aspir.jpg" alt="Аспир">
+        <div class="god-name">Аспир</div>
+      </div>
 
-  <div class="god-card" data-god="belum">
-    <img src="img/MorsGod.jpg" alt="Белум">
-    <div class="god-name">Белум</div>
-  </div>
+      <div class="god-card" data-god="mofara">
+        <img src="img/Mofara.png" alt="Мофара">
+        <div class="god-name">Мофара</div>
+      </div>
 
-  <div class="god-card" data-god="yuan">
-    <img src="img/Elem.jpg" alt="Юан">
-    <div class="god-name">Юан</div>
-  </div>
+      <div class="god-card" data-god="belum">
+        <img src="img/MorsGod.jpg" alt="Белум">
+        <div class="god-name">Белум</div>
+      </div>
 
-</div>
-    </main>
+      <div class="god-card" data-god="yuan">
+        <img src="img/Elem.jpg" alt="Юан">
+        <div class="god-name">Юан</div>
+      </div>
+
+    </div>
 
     <!-- ==================== МОДАЛЬНОЕ ОКНО ==================== -->
     <div class="god-modal" id="godModal">
@@ -101,5 +100,6 @@
 
     <script src="js/gods-data.js"></script>
     <script src="js/navigator.js"></script>
+    <script src="js/carousel.js"></script>
   </body>
 </html>
