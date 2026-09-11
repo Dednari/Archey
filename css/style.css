@@ -531,13 +531,13 @@ table:target {
 /* --- Карточка бога --- */
 .god-card {
   position: relative;
-  flex: 0 0 700px;
-  width: 700px;
-  min-width: 700px;
-  max-width: 700px;
-  height: 900px;
-  min-height: 900px;
-  max-height: 900px;
+  flex: 0 0 900px;
+  width: 900px;
+  min-width: 900px;
+  max-width: 900px;
+  height: 1200px;
+  min-height: 1200px;
+  max-height: 1200px;
   margin: 0;
   padding: 0;
   scroll-snap-align: start;
@@ -591,13 +591,13 @@ table:target {
     gap: 15px;
   }
   .god-card {
-    flex: 0 0 280px;
-    width: 280px;
-    min-width: 280px;
-    max-width: 280px;
-    height: 380px;
-    min-height: 380px;
-    max-height: 380px;
+    flex: 0 0 420px;
+    width: 420px;
+    min-width: 420px;
+    max-width: 420px;
+    height: 520px;
+    min-height: 520px;
+    max-height: 520px;
   }
   .god-name {
     font-size: 1rem;
