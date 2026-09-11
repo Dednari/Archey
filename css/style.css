@@ -657,3 +657,10 @@ table:target {
   color: #ff7b72;
   transform: rotate(90deg);
 }
+/* градиент по краям */
+.gods-carousel {
+  /* ... ваши стили ... */
+  position: relative;
+  mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+}
