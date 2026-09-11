@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="svoe95">
+    <meta name="keywords" content="dnd,fantasy,dark,game,roleplay,tabletop">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Древнейшие Боги</title>
+  </head>
+  <body>
+
+    <!-- ==================== ШТОРКА ==================== -->
+    <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="side-drawer" id="sideDrawer">
+        <div class="drawer-header">
+            <h3>Навигация</h3>
+            <button class="close-btn" id="closeDrawer">&times;</button>
+        </div>
+
+               <div class="drawer-section-title"><h2>Инфа, относящяяся ко всем сэтингам</h2></div>
+        <ul class="drawer-menu">
+        <li><a href="gods.html">⚡ Боги</a></li>
+        </ul>
+
+        <div class="drawer-section-title"><h2>Архей</h2></div>
+        <ul class="drawer-menu">
+            <li><a href="index.html">🏠 Главная</a></li>
+            <li><a href="lore.html">📜 Лор</a></li>
+            <li><a href="char_history.html">👤 Предыстории</a></li>
+            
+            <li><a href="Spells.html">✨ Заклинания</a></li>
+            <li><a href="magic.html">📜 Инфа, не попавшая в лор</a></li>
+        </ul>
+
+        <div class="drawer-section-title"><h2>Орден Волка</h2></div>
+        <ul class="drawer-menu">
+            <li><a href="OW.html">🐺 О ордене</a></li>
+            <li><a href="#">⚔️ Участники</a></li>
+        </ul>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ============ КАРУСЕЛЬ БОГОВ ============ -->
+    <div class="gods-carousel" id="godsCarousel">
+
+      <div class="god-card" data-god="zijitel">
+        <img src="img/RedPr.png" alt="Зиждитель">
+        <div class="god-name">Зиждитель</div>
+      </div>
+
+      <div class="god-card" data-god="ao">
+        <img src="img/Ao.png" alt="Лорд Ао">
+        <div class="god-name">Лорд Ао</div>
+      </div>
+
+      <div class="god-card" data-god="ronova">
+        <img src="img/Ronova.jpg" alt="Ронова">
+        <div class="god-name">Ронова</div>
+      </div>
+
+      <div class="god-card" data-god="aspir">
+        <img src="img/Aspir.jpg" alt="Аспир">
+        <div class="god-name">Аспир</div>
+      </div>
+
+      <div class="god-card" data-god="mofara">
+        <img src="img/Mofara.png" alt="Мофара">
+        <div class="god-name">Мофара</div>
+      </div>
+
+      <div class="god-card" data-god="belum">
+        <img src="img/MorsGod.jpg" alt="Белум">
+        <div class="god-name">Белум</div>
+      </div>
+
+      <div class="god-card" data-god="yuan">
+        <img src="img/Elem.jpg" alt="Юан">
+        <div class="god-name">Юан</div>
+      </div>
+
+    </div>
+
+    <!-- ==================== МОДАЛЬНОЕ ОКНО ==================== -->
+    <div class="god-modal" id="godModal">
+      <div class="god-modal-content">
+        <button class="god-modal-close" id="godModalClose">&times;</button>
+        <img class="god-modal-img" id="godModalImg" src="" alt="">
+        <h2 class="god-modal-title" id="godModalTitle"></h2>
+        <div class="god-modal-text" id="godModalText"></div>
+      </div>
+    </div>
+
+    <footer></footer>
+
+    <script src="js/gods-data.js"></script>
+    <script src="js/navigator.js"></script>
+    <script src="js/carousel.js"></script>
+  </body>
+</html>
