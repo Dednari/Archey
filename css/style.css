@@ -10,7 +10,7 @@
   overflow-x: auto !important;
   overflow-y: hidden !important;
   gap: 0 !important;
-  padding: 0 !important;
+  padding: 20px !important;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   width: 100vw !important;
@@ -20,6 +20,7 @@
   top: 0;
   left: 0;
   margin: 0;
+  background: #1a1a1a;
 }
 
 .gods-carousel::-webkit-scrollbar {
@@ -40,31 +41,32 @@
 /* --- Карточка бога на весь экран --- */
 .god-card {
   position: relative !important;
-  flex: 0 0 100vw !important;
-  width: 100vw !important;
-  min-width: 100vw !important;
-  max-width: 100vw !important;
-  height: 100vh !important;
-  min-height: 100vh !important;
-  max-height: 100vh !important;
+  flex: 0 0 calc(100vw - 40px) !important;
+  width: calc(100vw - 40px) !important;
+  min-width: calc(100vw - 40px) !important;
+  max-width: calc(100vw - 40px) !important;
+  height: calc(100vh - 40px) !important;
+  min-height: calc(100vh - 40px) !important;
+  max-height: calc(100vh - 40px) !important;
   margin: 0 !important;
   padding: 0 !important;
   scroll-snap-align: start;
   cursor: pointer;
-  border-radius: 0 !important;
+  border-radius: 15px !important;
   overflow: hidden !important;
-  border: none !important;
+  border: 3px solid #612ace !important;
   background: #000000;
   transition: opacity 0.3s ease;
   display: flex !important;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 30px rgba(97, 42, 206, 0.4);
 }
 
 .god-card:hover {
   transform: none;
-  box-shadow: none;
-  border-color: transparent;
+  box-shadow: 0 0 40px rgba(97, 42, 206, 0.7);
+  border-color: #a99fff;
   opacity: 1;
 }
 
@@ -74,11 +76,12 @@
   height: 100% !important;
   max-width: 100% !important;
   max-height: 100% !important;
-  object-fit: cover !important;
+  object-fit: contain !important;
   display: block !important;
   margin: 0 !important;
   padding: 0 !important;
   transition: transform 0.4s ease;
+  background: #000000;
 }
 
 .god-card:hover img {
@@ -97,9 +100,13 @@
   font-weight: bold;
   font-size: 2.5rem;
   letter-spacing: 2px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.6), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
   text-shadow: 0 2px 8px #000;
   z-index: 10;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* --- Кнопка переключения карусели --- */
@@ -136,9 +143,24 @@
 
 /* Мобильные устройства */
 @media (max-width: 768px) {
+  .gods-carousel {
+    padding: 15px !important;
+  }
+  
+  .god-card {
+    flex: 0 0 calc(100vw - 30px) !important;
+    width: calc(100vw - 30px) !important;
+    min-width: calc(100vw - 30px) !important;
+    max-width: calc(100vw - 30px) !important;
+    height: calc(100vh - 30px) !important;
+    min-height: calc(100vh - 30px) !important;
+    max-height: calc(100vh - 30px) !important;
+  }
+  
   .god-name {
     font-size: 1.8rem;
-    padding: 20px 15px !important;
+    padding: 25px 15px !important;
+    min-height: 70px;
   }
   
   .carousel-next-btn {
@@ -150,9 +172,25 @@
 }
 
 @media (max-width: 480px) {
+  .gods-carousel {
+    padding: 10px !important;
+  }
+  
+  .god-card {
+    flex: 0 0 calc(100vw - 20px) !important;
+    width: calc(100vw - 20px) !important;
+    min-width: calc(100vw - 20px) !important;
+    max-width: calc(100vw - 20px) !important;
+    height: calc(100vh - 20px) !important;
+    min-height: calc(100vh - 20px) !important;
+    max-height: calc(100vh - 20px) !important;
+    border-radius: 10px !important;
+  }
+  
   .god-name {
-    font-size: 1.5rem;
-    padding: 15px 10px !important;
+    font-size: 1.4rem;
+    padding: 20px 10px !important;
+    min-height: 60px;
   }
   
   .carousel-next-btn {
