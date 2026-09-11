@@ -524,8 +524,8 @@ table:target {
   position: relative;
   /* Ширина: 85% от высоты экрана * пропорцию, но не меньше 260px и не больше 500px */
   flex: 0 0 auto;
-  width: clamp(260px, 45vh * var(--god-card-ratio));
-  height: clamp(340px, 45vh);
+  width: clamp(45vh * var(--god-card-ratio));
+  height: clamp(45vh);
   margin: 0;
   padding: 0;
   scroll-snap-align: start;
