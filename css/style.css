@@ -10,11 +10,10 @@
   --text_color: #eae5eb;
   --link_color: #dcd9e5;
 
-  /* === РАЗМЕР КАРТОЧЕК БОГОВ (меняйте только здесь) === */
-  --god-card-width: 900px;
-  --god-card-height: 1200px;
+  /* Пропорции карточки бога (ширина / высота) */
+  --god-card-ratio: 0.75; /* 3:4 — вертикальная */
+  --god-card-gap: 20px;
 }
-
 
 /* =========================================================
    2. БАЗОВЫЕ СТИЛИ (BODY, SCROLLBAR, ССЫЛКИ)
@@ -496,7 +495,7 @@ table:target {
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
-  gap: 20px;
+  gap: var(--god-card-gap);
   padding: 25px;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -521,16 +520,12 @@ table:target {
   background: #a99fff;
 }
 
-/* --- Карточка бога --- */
 .god-card {
   position: relative;
-  flex: 0 0 var(--god-card-width);
-  width: var(--god-card-width);
-  min-width: var(--god-card-width);
-  max-width: var(--god-card-width);
-  height: var(--god-card-height);
-  min-height: var(--god-card-height);
-  max-height: var(--god-card-height);
+  /* Ширина: 85% от высоты экрана * пропорцию, но не меньше 260px и не больше 500px */
+  flex: 0 0 auto;
+  width: clamp(260px, 45vh * var(--god-card-ratio), 500px);
+  height: clamp(340px, 45vh, 660px);
   margin: 0;
   padding: 0;
   scroll-snap-align: start;
@@ -548,7 +543,6 @@ table:target {
   border-color: #a99fff;
 }
 
-/* --- Картинка в карточке --- */
 .god-card img {
   width: 100%;
   height: 100%;
@@ -576,7 +570,6 @@ table:target {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0));
   text-shadow: 0 2px 4px #000;
 }
-
 /* --- Кнопка переключения карусели --- */
 .carousel-next-btn {
   position: fixed;
@@ -607,11 +600,12 @@ table:target {
 @media (max-width: 768px) {
   .gods-carousel {
     padding: 15px;
-    gap: 15px;
+    gap: 12px;
   }
   .god-card {
-    --god-card-width: 420px;
-    --god-card-height: 520px;
+    /* На телефоне карточка занимает ~80% ширины экрана */
+    width: 80vw;
+    height: calc(80vw / var(--god-card-ratio));
   }
   .god-name {
     font-size: 1rem;
