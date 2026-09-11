@@ -9,6 +9,10 @@
   --highlight_border: rgb(255, 204, 0);
   --text_color: #eae5eb;
   --link_color: #dcd9e5;
+
+  /* === РАЗМЕР КАРТОЧЕК БОГОВ (меняйте только здесь) === */
+  --god-card-width: 900px;
+  --god-card-height: 1200px;
 }
 
 
@@ -233,13 +237,14 @@ a:visited {
    4. ШАПКА САЙТА (HEADER)
    ========================================================= */
 header {
-  padding: 25px;
+  padding: 25px 25px 25px 80px; /* Слева добавили 80px под гамбургер */
   background-color: #140e29;
   list-style-type: none;
   align-items: center;
   top: 0;
   width: 100%;
   z-index: 1000;
+  box-sizing: border-box;
 }
 header ul {
   display: flex;
@@ -290,19 +295,8 @@ header a.active:hover {
 /* =========================================================
    5. ОСНОВНОЙ КОНТЕНТ (MAIN)
    ========================================================= */
-header {
-  padding: 25px 25px 25px 80px; /* Слева добавили 80px под гамбургер */
-  background-color: #140e29;
-  list-style-type: none;
-  align-items: center;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-sizing: border-box; /* важно, чтобы padding не расширял блок */
-}
-
 main header {
-  padding: 10px 10px 10px 80px; /* Слева тоже освобождаем место */
+  padding: 10px 10px 10px 80px;
   background-color: rgba(120, 120, 216, 0.1);
 }
 main header a {
@@ -488,7 +482,7 @@ table:target {
   color: white;
   font-size: 0.9em;
   font-style: italic;
-   }
+}
 
 
 /* =========================================================
@@ -508,7 +502,6 @@ table:target {
   scroll-behavior: smooth;
   width: 100%;
   box-sizing: border-box;
-  /* Убираем border, чтобы не резало глаз */
   border-bottom: 1px solid rgba(97, 42, 206, 0.3);
 }
 
@@ -531,13 +524,13 @@ table:target {
 /* --- Карточка бога --- */
 .god-card {
   position: relative;
-  flex: 0 0 900px;
-  width: 900px;
-  min-width: 900px;
-  max-width: 900px;
-  height: 1200px;
-  min-height: 1200px;
-  max-height: 1200px;
+  flex: 0 0 var(--god-card-width);
+  width: var(--god-card-width);
+  min-width: var(--god-card-width);
+  max-width: var(--god-card-width);
+  height: var(--god-card-height);
+  min-height: var(--god-card-height);
+  max-height: var(--god-card-height);
   margin: 0;
   padding: 0;
   scroll-snap-align: start;
@@ -584,6 +577,32 @@ table:target {
   text-shadow: 0 2px 4px #000;
 }
 
+/* --- Кнопка переключения карусели --- */
+.carousel-next-btn {
+  position: fixed;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 500;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #a99fff;
+  background: rgba(97, 42, 206, 0.85);
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+  box-shadow: 0 4px 15px rgba(97, 42, 206, 0.5);
+}
+.carousel-next-btn:hover {
+  background: #a99fff;
+  transform: translateY(-50%) scale(1.1);
+}
+
 /* Мобильные */
 @media (max-width: 768px) {
   .gods-carousel {
@@ -591,17 +610,18 @@ table:target {
     gap: 15px;
   }
   .god-card {
-    flex: 0 0 420px;
-    width: 420px;
-    min-width: 420px;
-    max-width: 420px;
-    height: 520px;
-    min-height: 520px;
-    max-height: 520px;
+    --god-card-width: 420px;
+    --god-card-height: 520px;
   }
   .god-name {
     font-size: 1rem;
     padding: 10px;
+  }
+  .carousel-next-btn {
+    width: 45px;
+    height: 45px;
+    right: 12px;
+    font-size: 1.3rem;
   }
 }
 
