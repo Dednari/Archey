@@ -45,3 +45,25 @@ document.addEventListener('DOMContentLoaded', function() {
         currentIndex = Math.round(carousel.scrollLeft / window.innerWidth);
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.getElementById('godsCarousel');
+  if (!carousel) return;
+
+  carousel.addEventListener('wheel', (e) => {
+    if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+    e.preventDefault();
+
+    const card = carousel.querySelector('.god-card');
+    if (!card) return;
+
+    const style = getComputedStyle(carousel);
+    const gap = parseInt(style.gap) || 20;
+    const step = card.offsetWidth + gap;
+
+    carousel.scrollBy({
+      left: e.deltaY > 0 ? step : -step,
+      behavior: 'smooth'
+    });
+  }, { passive: false });
+});
