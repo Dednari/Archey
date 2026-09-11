@@ -524,8 +524,8 @@ table:target {
   position: relative;
   /* Ширина: 85% от высоты экрана * пропорцию, но не меньше 260px и не больше 500px */
   flex: 0 0 auto;
-  width: clamp(260px, 45vh * var(--god-card-ratio), 500px);
-  height: clamp(340px, 45vh, 660px);
+  width: clamp(260px, 45vh * var(--god-card-ratio));
+  height: clamp(340px, 45vh);
   margin: 0;
   padding: 0;
   scroll-snap-align: start;
@@ -597,7 +597,7 @@ table:target {
 }
 
 /* Мобильные */
-@media (max-width: 768px) {
+@media {
   .gods-carousel {
     padding: 15px;
     gap: 12px;
