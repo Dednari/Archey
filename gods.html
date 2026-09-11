@@ -4,265 +4,115 @@
     <meta charset="utf-8">
     <meta name="author" content="svoe95">
     <meta name="keywords" content="dnd,fantasy,dark,game,roleplay,tabletop">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-        <link rel="icon" href="favicon.png" type="image/x-icon">
     <title>Древнейшие Боги</title>
   </head>
   <body>
-    <
-    <!-- 1. СНАЧАЛА ИДЕТ КНОПКА ГАМБУРГЕР -->
+
+    <!-- ==================== ШТОРКА ==================== -->
     <button class="menu-toggle" id="menuToggle">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
-    <!-- Сама выдвигающаяся шторка -->
-<div class="side-drawer" id="sideDrawer">
-    <div class="drawer-header">
-        <h3>Навигация</h3>
-        <button class="close-btn" id="closeDrawer">&times;</button>
+    <div class="side-drawer" id="sideDrawer">
+        <div class="drawer-header">
+            <h3>Навигация</h3>
+            <button class="close-btn" id="closeDrawer">&times;</button>
+        </div>
+
+        <div class="drawer-section-title"><h2>Архей</h2></div>
+        <ul class="drawer-menu">
+            <li><a href="index.html">🏠 Главная</a></li>
+            <li><a href="lore.html">📜 Лор</a></li>
+            <li><a href="char_history.html">👤 Предыстории</a></li>
+            <li><a href="gods.html">⚡ Боги</a></li>
+            <li><a href="Spells.html">✨ Заклинания</a></li>
+            <li><a href="magic.html">📜 Инфа, не попавшая в лор</a></li>
+        </ul>
+
+        <div class="drawer-section-title"><h2>Орден Волка</h2></div>
+        <ul class="drawer-menu">
+            <li><a href="#">🐺 О ордене</a></li>
+            <li><a href="#">⚔️ Участники</a></li>
+        </ul>
     </div>
-    
-    <!-- Заголовок раздела -->
-    <div class="drawer-section-title"><h2>Архей</h2></div>
 
-    <!-- Ссылки раздела Архей -->
-    <ul class="drawer-menu">
-        <li><a href="index.html">🏠 Главная</a></li>
-        <li><a href="lore.html">📜 Лор</a></li>
-        <li><a href="char_history.html">👤 Предыстории</a></li>
-        <li><a href="gods.html">⚡ Боги</a></li>
-        <li><a href="Spells.html">✨ Заклинания</a></li>
-        <li><a href="magic.html">📜 Инфа, не попавшая в лор</a></li>
-
-    </ul>
-
-    <!-- Второй раздел -->
-    <div class="drawer-section-title"><h2>Орден Волка</h2></div>
-    <ul class="drawer-menu">
-        <li><a href="#">🐺 О ордене</a></li>
-        <li><a href="#">⚔️ Участники</a></li>
-    </ul>
-</div>
-
-    <!-- 3. ОВЕРЛЕЙ (затемнение) -->
     <div class="overlay" id="overlay"></div>
+    <!-- ==================== /ШТОРКА ==================== -->
 
-    
     <main>
       <header>
+        <a href="gods.html" class="active">⚡ Древнейшие Боги</a>
+      </header>
 
-<div class="card item center">
-          
-          <style>
-  .image-left {
-    float: left;
-    margin-left: 15px; /* отступ слева от картинки */
-    margin-bottom: 15px; /* отступ снизу для красоты */
-    margin-right: 15px;
-  }
-</style>
-</head>
-<body>
+      <div class="container center">
+        <h1>Древнейшие Боги</h1>
 
-<img src="img/RedPr.png" width="339" height="339" alt="Картинка" class="image-left" />
+        <!-- ============ СЕТКА БОГОВ ============ -->
+        <div class="gods-grid">
 
-<b>Зиждитель</b>
-<p>ᅠ ᅠ</p>
-  <p>Бог богов, создатель всего, что есть в мультивселенной. Ему постоянно скучно, так что его подчинённые делают миры для того что бы его развлечь.
-  </p>
-<i>Внешность:</i>
-<p>?</p>
-  <p>ᅠ ᅠ</p>
-  <b>Домен за который отвечает:</b>
-  <p>Домен Обмана</p>
+          <!-- Зиждитель -->
+          <div class="god-card" data-god="zijitel">
+            <img src="img/RedPr.png" alt="Зиждитель">
+            <div class="god-name">Зиждитель</div>
+          </div>
 
+          <!-- Лорд Ао -->
+          <div class="god-card" data-god="ao">
+            <img src="img/Ao.png" alt="Лорд Ао">
+            <div class="god-name">Лорд Ао</div>
+          </div>
 
-  
-</div>
+          <!-- Ронова -->
+          <div class="god-card" data-god="ronova">
+            <img src="img/Ronova.jpg" alt="Ронова">
+            <div class="god-name">Ронова</div>
+          </div>
 
-        <div class="card item center">
-        
-          <style>
-  .image-left {
-    float: left;
-    margin-left: 15px; /* отступ слева от картинки */
-    margin-bottom: 15px; /* отступ снизу для красоты */
-    margin-right: 15px;
-  }
-</style>
-</head>
-<body>
+          <!-- Аспир -->
+          <div class="god-card" data-god="aspir">
+            <img src="img/Aspir.jpg" alt="Аспир">
+            <div class="god-name">Аспир</div>
+          </div>
 
-<img src="img/Ao.png" width="339" height="480" alt="Картинка" class="image-left" />
+          <!-- Мофара -->
+          <div class="god-card" data-god="mofara">
+            <img src="img/Mofara.png" alt="Мофара">
+            <div class="god-name">Мофара</div>
+          </div>
 
-<b>Лорд Ао</b>
-<p>ᅠ ᅠ</p>
-  <p>Верховный бог начала. Создаёт миры на которых будут трудится другие боги для создания развлекательной площадки.
-  </p>
-<i>Внешность:</i>
-<p> Показывался 1 раз. Это 12 футовый гуманоид. Его лицо не имеет возраста, оно не молодое и не старое. Его внешность не красива и не уродлива, у него ровные, симметричные и неприметные черты. Его волосы и борода белые. Он носит мантию, которая кажется сделанной из неземной ткани. Мантия черная и усеяна миллионами звезд и тысячами лун, и сделана по образцу, который недостаточно понятен, но придает всей мантии ощущение красоты и гармонии.</p>
-       <p>ᅠ ᅠ</p>
-  <b>Домен за который отвечает:</b>
-  <p>Домен Природы</p>
-  <p>Домен Света</p>
-  <p>Домен Мира</p>
-  <P>Домен Города</P>
+          <!-- Белум -->
+          <div class="god-card" data-god="belum">
+            <img src="img/MorsGod.jpg" alt="Белум">
+            <div class="god-name">Белум</div>
+          </div>
+
+          <!-- Юан -->
+          <div class="god-card" data-god="yuan">
+            <img src="img/Elem.jpg" alt="Юан">
+            <div class="god-name">Юан</div>
+          </div>
+
         </div>
-        <div class="card item center">
-        
-          <style>
-  .image-left {
-    float: left;
-    margin-left: 15px; /* отступ слева от картинки */
-    margin-bottom: 15px; /* отступ снизу для красоты */
-    margin-right: 15px;
-  }
-</style>
-</head>
-<body>
+      </div>
+    </main>
 
-<img src="img/Ronova.jpg" width="412" height="309" alt="Картинка" class="image-left" />
-
-<b>Ронова</b>
-<p>ᅠ ᅠ</p>
-  <p> Всё, что рождается, она отмечает невидимой нитью; всё, что умирает, она принимает в свои ладони. Некромантия и лечащие заклинания вышли из одних и тех же её рук не случайно: для неё нет разницы между тем, чтобы вернуть дыхание в грудь, и тем, чтобы удержать душу у порога. И то, и другое - просто перестановка того, что уже существует.
-  </p>
-<i>Внешность:</i>
-  <p>Она не имеет тела. Её проявление - гигантский алый глаз, парящий в разрыве реальности. Вокруг него - искажённое пространство, похожее на разорванную плоть или багровые вихри.
-
-Главный глаз огромен, с ярко-алой радужкой и тёмным зрачком, в котором пульсирует свет. По «векам» вокруг него расположены меньшие глаза от четырёх до шести, они моргают не в такт и смотрят в разные стороны.
-
-От нижнего края глаза свисают алые капли или нити, похожие на кровь или слёзы. Они стекают вниз и растворяются в воздухе.</p>
-    <p>ᅠ ᅠ</p>
-  <b>Домен за который отвечает:</b>
-  <p>Домен Жизни</p>
-  <p>Домен Смерти</p>
-  <p>Домен Упокоения</p>
-  <p>Домен Ужаса</p>
-        </div>
-    <div class="card item center">
-        
-          <style>
-  .image-left {
-    float: left;
-    margin-left: 15px; /* отступ слева от картинки */
-    margin-bottom: 15px; /* отступ снизу для красоты */
-    margin-right: 15px;
-  }
-</style>
-</head>
-<body>
-
-<img src="img/Aspir.jpg" width="339" height="480" alt="Картинка" class="image-left" />
-
-<b>Аспир</b>
-<p>ᅠ ᅠ</p>
-  <p>Верховный бог времени. Видит прошлое и будущее в настоящем. Не говорит, чтобы не сболтнуть лишнего и не нарушить временной поток.
-  </p>
-<i>Внешность:</i>
-<p>Гуманоид ростом с человека, одет в чёрное пальто с мехом на капюшоне. Из под капюшона видно только его белые светящиеся глаза.</p>
-     <p>ᅠ ᅠ</p>
-  <b>Домен за который отвечает:</b>
-  <p>Домен Сумерек</p>
-  <p>Домен Порядка</p>
-  <p>Домен Судьбы</p>
+    <!-- ==================== МОДАЛЬНОЕ ОКНО ==================== -->
+    <div class="god-modal" id="godModal">
+      <div class="god-modal-content">
+        <button class="god-modal-close" id="godModalClose">&times;</button>
+        <img class="god-modal-img" id="godModalImg" src="" alt="">
+        <h2 class="god-modal-title" id="godModalTitle"></h2>
+        <div class="god-modal-text" id="godModalText"></div>
+      </div>
     </div>
 
-        <div class="card item center">
-        
-          <style>
-  .image-left {
-    float: left;
-    margin-left: 15px; /* отступ слева от картинки */
-    margin-bottom: 15px; /* отступ снизу для красоты */
-    margin-right: 15px;
-  }
-</style>
-</head>
-<body>
-
-<img src="img/Mofara.png" width="339" height="480" alt="Картинка" class="image-left" />
-
-<b>Мофара</b>
-<p>ᅠ ᅠ</p>
-  <p>Верховная богиня магии. Именно она создала и распространила плетение почти по  всей мультивселенной, а также она вместе с Роновой создала 99,99% всех заклинаний.
-  </p>
-<i>Внешность:</i>
-<p>выглядит как цельная статуя в 10 футов высотой гуманоида-женщины из сероголубого кристалла. На голове у нее покоится корона из такого же минерала, с которой отходят толстые сверкающие нити, которые обвивают богиню.</p>
-         <p>ᅠ ᅠ</p>
-  <b>Домен за который отвечает:</b>
-  <p>Домен Знаний</p>
-  <p>Домен Магии</p>
-        </div>
-
-        <div class="card item center">
-        
-          <style>
-  .image-left {
-    float: left;
-    margin-left: 15px; /* отступ слева от картинки */
-    margin-bottom: 15px; /* отступ снизу для красоты */
-    margin-right: 15px;
-  }
-</style>
-</head>
-<body>
-
-<img src="img/MorsGod.jpg" width="339" height="480" alt="Картинка" class="image-left" />
-
-<b>Белум</b>
-<p>ᅠ ᅠ</p>
-  <p>Верховный бог войны. Он делает самую важную часть в мирах, резню, которая так привлекает Зиждителя.
-  </p>
-<i>Внешность:</i>
-<p>Антропоморфный волк ростом 12 фт. Покрыт шрамами, ссадинами, ожогами.</p>
-    <p>ᅠ ᅠ</p>
-  <b>Домен за который отвечает:</b>
-  <p>Домен Войны</p>
-  <p>Домен Защиты</p>
-  <p>Домен Инквизиции</p>
-  
-        </div>
-
-        <div class="card item center">
-        
-          <style>
-  .image-left {
-    float: left;
-    margin-left: 15px; /* отступ слева от картинки */
-    margin-bottom: 15px; /* отступ снизу для красоты */
-    margin-right: 15px;
-  }
-</style>
-</head>
-<body>
-
-<img src="img/Elem.jpg" width="339" height="480" alt="Картинка" class="image-left" />
-
-<b>Юан</b>
-<p>ᅠ ᅠ</p>
-  <p>Верховный бог огня, воды, земли и ветра. Самый скрытный и не примечательный бог из всех. О нем почти ничего не известно, кроме того, что он покровитель стихий и творчества, а также то, что Мофара по его просьбе создала заклинание "Огненный Шар".
-  </p>
-<i>Внешность:</i>
-<p>Представляет собой металлический шар с глазами, которого обвивают кольца из огня, воды, земли и ветра.</p>
-  <p>ᅠ ᅠ</p>
-  <b>Домен за который отвечает:</b>
-  <p>Домен Бури</p>
-  <P>Домен Кузни</P>
-  
-        </div>
-
-
-
-      </main>
     <footer></footer>
-    <!-- В <head> для стилей -->
-<link rel="stylesheet" href="css/style.css">
 
-<!-- Перед </body> для скриптов -->
-<script src="js/gods-data.js"></script>
-<script src="js/navigator.js"></script>
+    <script src="js/gods-data.js"></script>
+    <script src="js/navigator.js"></script>
   </body>
 </html>
