@@ -531,7 +531,7 @@ table:target {
 /* --- Карточка бога --- */
 .god-card {
   position: relative;
-  flex: 0 0 260px;
+  flex: 0 0 540px;
   width: 540px;
   min-width: 540px;
   max-width: 540px;
