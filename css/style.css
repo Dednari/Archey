@@ -18,6 +18,15 @@
   --god-card-vh: calc(100vh - clamp(45px, 55px, 70px));
 }
 
+/*Фон gods.html*/
+
+.godsfon {
+    background-image: url('css/godsfon.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 /* =========================================================
    2. БАЗОВЫЕ СТИЛИ (BODY, SCROLLBAR, ССЫЛКИ)
    ========================================================= */
@@ -488,7 +497,7 @@ table:target {
 
 
 /* =========================================================
-   СТРАНИЦА БОГОВ — КАРУСЕЛЬ + МОДАЛЬНОЕ ОКНО
+   СТРАНИЦА БОГОВ — ОДНА КАРТОЧКА НА ЭКРАН
    ========================================================= */
 
 .gods-carousel {
@@ -497,94 +506,132 @@ table:target {
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
-  gap: var(--god-card-gap);
-  padding: 25px;
+  gap: 0;
+  padding: 0;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   width: 100%;
+  height: 100vh;
   box-sizing: border-box;
   background: transparent;
 }
 
-.gods-carousel::-webkit-scrollbar { height: 10px; }
-.gods-carousel::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 5px;
+.gods-carousel::-webkit-scrollbar { display: none; }
+.gods-carousel {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-.gods-carousel::-webkit-scrollbar-thumb {
-  background: #612ace;
-  border-radius: 5px;
-}
-.gods-carousel::-webkit-scrollbar-thumb:hover { background: #a99fff; }
 
+/* --- Карточка = одна на весь экран, адаптивная --- */
 .god-card {
   position: relative;
-  flex: 0 0 auto;
-  width: calc(var(--god-card-vh) * var(--god-card-ratio));
-  height: var(--god-card-vh);
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
   cursor: pointer;
-  border: 2px solid #612ace;
-  background: transparent;
-  border-radius: 15px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-.god-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(97, 42, 206, 0.6);
-  border-color: #a99fff;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Бокс карточки — единый для всех, подстраивается под экран */
 .god-card img {
-  width: 100%;
-  height: 100%;
+  width: 70vh;                /* ← 55% от высоты экрана */
+  height: 90vh;               /* ← 78% от высоты экрана */
+  max-width: 90vw;            /* ← не шире 90% ширины экрана */
+  max-height: 88vh;           /* ← не выше 88% высоты экрана */
   object-fit: cover;
   object-position: center;
   display: block;
-  border-radius: 13px;
+  border: 2px solid #612ace;
+  border-radius: 15px;
   background: transparent;
-  transition: transform 0.4s ease;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.god-card:hover img { transform: scale(1.03); }
+.god-card:hover img {
+  transform: scale(1.02);
+  border-color: #a99fff;
+  box-shadow: 0 10px 40px rgba(97, 42, 206, 0.7);
+}
 
 .god-name {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  padding: 12px;
+  padding: 12px 32px;
   color: #fff;
   font-weight: bold;
-  font-size: 1.15rem;
-  letter-spacing: 1px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0));
-  text-shadow: 0 2px 4px #000;
-  border-radius: 0 0 13px 13px;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  background: rgba(12, 9, 23, 0.75);
+  border-radius: 10px;
+  text-shadow: 0 2px 8px #000;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.carousel-next-btn {
+  position: fixed;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 500;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #a99fff;
+  background: rgba(97, 42, 206, 0.85);
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+  box-shadow: 0 4px 15px rgba(97, 42, 206, 0.5);
+}
+.carousel-next-btn:hover {
+  background: #a99fff;
+  transform: translateY(-50%) scale(1.1);
 }
 
 @media (max-width: 768px) {
-  .gods-carousel {
-    padding: 15px;
-    gap: 12px;
-  }
   .god-card {
-    width: 80vw;
-    height: calc(80vw / var(--god-card-ratio));
+    padding: 15px 10px;
   }
   .god-name {
-    font-size: 1rem;
-    padding: 10px;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    bottom: 30px;
+    letter-spacing: 1px;
+  }
+  .carousel-next-btn {
+    width: 45px;
+    height: 45px;
+    right: 12px;
+    font-size: 1.3rem;
   }
 }
 
 /* =========================================================
-   МОДАЛЬНОЕ ОКНО
+   МОДАЛЬНОЕ ОКНО (оставляем как было)
    ========================================================= */
 .god-modal {
   display: none;
